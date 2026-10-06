@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVS University Application Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>    <div class="page" id="page1">
+        <header>
+            <div class="logo-placeholder" onclick="document.getElementById('logo-upload').click()" style="cursor: pointer; overflow: hidden; position: relative; text-align: center; border: none;">
+                <img src="RVS University Logo 2026 Gold copy.png" id="logo-img" style="display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: contain; position: absolute; top: 0; left: 0;">
+                <span id="logo-text" style="display: none; flex-direction: column; line-height: 1.2;">
+                    <span><span style="color: #d81b60;">R</span><span style="color: #4caf50;">V</span><span style="color: #4caf50;">S</span></span>
+                    <span style="font-size: 8px; color: #555; font-weight: normal;">Upload Logo</span>
+                </span>
+                <input type="file" id="logo-upload" accept="image/*" style="display:none;" onchange="previewLogo(event)">
+            </div>
+            <div class="header-text">
+                <h1 style="font-family: serif; font-size: 38px; margin-bottom: 5px; line-height: 1; white-space: nowrap;"><span style="color: #eb115f;">R</span><span style="color: #472b7a;">V</span><span style="color: #06a014;">S</span> <span style="color: #061234;">UNIVERSITY</span></h1>
+                <p class="tagline" style="color: #c99a4e; border-top: 1px solid #c99a4e; border-bottom: 1px solid #c99a4e; padding: 2px 0; display: inline-block; font-size: 10px; letter-spacing: 1px; margin-bottom: 5px;">FIND YOUR PLACE : FOLLOW YOUR PASSION</p>
+                <p class="sub-tagline" style="font-size: 10px; line-height: 1.4; margin-top: 5px;">Estd. under Andhra Pradesh Private Universities (Establishment and Regulation) Act, 2016<br>RVS Nagar, Chittoor, Andhra Pradesh - 517127</p>
+            </div>
+            <div class="naac-grade" style="display: flex; flex-direction: column; border: none; padding: 0;">
+                <div style="display: flex; align-items: flex-end; border-bottom: 2px solid #000; padding-bottom: 2px;">
+                    <div style="display: flex; flex-direction: column; font-weight: 900; font-size: 16px; color: #000; line-height: 1.1; margin-right: 5px; text-align: left;">
+                        <span>NAAC</span>
+                        <span>GRADE</span>
+                    </div>
+                    <div style="color: #f00; font-weight: 900; font-size: 42px; line-height: 0.8;">A+</div>
+                </div>
+                <div style="color: #b82433; font-weight: 700; font-size: 10px; letter-spacing: 0.5px; margin-top: 2px; text-align: center;">
+                    ACCREDITED UNIVERSITY
+                </div>
+            </div>
+        </header>
+
+        <h2 class="form-title">APPLICATION FORM FOR ADMISSION</h2>
+        
+        <div class="top-fields">
+            <div class="fields-left">
+                <div class="field-group">
+                    <label>Admission ID:</label>
+                    <input type="text" class="input-line">
+                </div>
+                <div class="field-group">
+                    <label>Course:</label>
+                    <input type="text" class="input-line">
+                </div>
+            </div>
+            <div class="photo-box" id="photo-box" onclick="document.getElementById('photo-upload').click()">
+                <span id="photo-text">Affix a Passport size<br>photograph here<br><br><small>(Click to upload)</small></span>
+                <img id="photo-preview" style="display:none; width: 100%; height: 100%; object-fit: cover;">
+                <input type="file" id="photo-upload" accept="image/*" style="display:none;" onchange="previewImage(event)">
+            </div>
+        </div>
+
+        <div class="section-title vertical-label"><span>ADMISSION DETAILS</span></div>
+        <div class="section-content">
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Convener</label>
+                <label><input type="checkbox"> Category-B</label>
+                <label><input type="checkbox"> Spot</label>
+                <label><input type="checkbox"> PIO</label>
+                <label><input type="checkbox"> RVSCET</label>
+            </div>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> EAPCET</label>
+                <label><input type="checkbox"> ECET</label>
+                <label><input type="checkbox"> ICET</label>
+                <label><input type="checkbox"> PGCET</label>
+            </div>
+            
+            <div class="field-row">
+                <label>School of Studies:</label>
+                <div class="checkbox-group inline">
+                    <label><input type="checkbox"> UG</label>
+                    <label><input type="checkbox"> PG</label>
+                    <label><input type="checkbox"> PhD</label>
+                </div>
+                <label>Year of Admission:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div class="field-row">
+                <label>Branch of Study:</label>
+                <input type="text" class="input-line fill">
+            </div>
+        </div>
+
+        <div class="section-title vertical-label"><span>PERSONAL DETAILS</span></div>
+        <div class="section-content">
+             <div class="field-row">
+                <label>Full Name:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div class="field-row">
+                <label>Date of Birth:</label>
+                <input type="date" class="input-line">
+                <label>Gender:</label>
+                <div class="checkbox-group inline">
+                    <label><input type="checkbox"> Male</label>
+                    <label><input type="checkbox"> Female</label>
+                    <label><input type="checkbox"> Others</label>
+                </div>
+            </div>
+            <div class="field-row">
+                <label>Mobile:</label>
+                <input type="text" class="input-line">
+                <label>Differently-abled:</label>
+                <div class="checkbox-group inline">
+                    <label><input type="checkbox"> Yes</label>
+                    <label><input type="checkbox"> No</label>
+                </div>
+            </div>
+            <div class="field-row">
+                <label>Nationality:</label>
+                <input type="text" class="input-line">
+                <label>Religion:</label>
+                <input type="text" class="input-line">
+                <label>Caste:</label>
+                <input type="text" class="input-line">
+            </div>
+            <div class="field-row">
+                <label>Sub Caste:</label>
+                <div class="checkbox-group inline">
+                    <label><input type="checkbox"> OC</label>
+                    <label><input type="checkbox"> BC A/B/C/D/E</label>
+                    <label><input type="checkbox"> SC</label>
+                    <label><input type="checkbox"> ST</label>
+                </div>
+            </div>
+            <div class="field-row">
+                <label>Special Category:</label>
+                <div class="checkbox-group inline">
+                    <label><input type="checkbox"> SPORTS</label>
+                    <label><input type="checkbox"> NSS</label>
+                    <label><input type="checkbox"> NCC</label>
+                    <label><input type="checkbox"> EX-SERVICEMEN</label>
+                </div>
+            </div>
+
+            <!-- Address fields -->
+            <div class="field-row">
+                <label>Address:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div class="field-row">
+                <label>City:</label>
+                <input type="text" class="input-line fill">
+                <label>District:</label>
+                <input type="text" class="input-line fill">
+                <label>Pincode:</label>
+                <input type="text" class="input-line">
+            </div>
+             <div class="field-row">
+                <label>State:</label>
+                <input type="text" class="input-line fill">
+                <label>Country:</label>
+                <input type="text" class="input-line fill">
+            </div>
+             <div class="field-row">
+                <label>Aadhar:</label>
+                <input type="text" class="input-line fill">
+                <label>Apaar ID:</label>
+                <input type="text" class="input-line fill">
+            </div>
+             <div class="field-row">
+                <label>Mother Tongue:</label>
+                <input type="text" class="input-line fill">
+                <label>Blood Group:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div class="field-row">
+                <label>e-Mail:</label>
+                <input type="email" class="input-line fill">
+            </div>
+             <div class="field-row" style="align-items: flex-start;">
+                <label style="width: 150px;">Personal Marks of<br>Identification:</label>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                    <input type="text" class="input-line">
+                    <input type="text" class="input-line">
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-title vertical-label"><span>FAMILY DETAILS</span></div>
+        <div class="section-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px;">
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Father's Name:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Mother's Name:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Occupation:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Occupation:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Annual Income:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Annual Income:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            
+             <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Aadhar:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Aadhar:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Mobile:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Mobile:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Local Guardian Name:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Relation:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            
+             <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 145px; white-space: nowrap;">Mobile:</label>
+                <input type="text" class="input-line fill">
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 10px;">
+                <label style="width: 110px; white-space: nowrap;">Address:</label>
+                <input type="text" class="input-line fill">
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page2" style="page-break-before: always;">
+         <div class="section-title vertical-label"><span>EDUCATION DETAILS</span></div>
+         <div class="section-content">
+             <table class="form-table">
+                 <thead>
+                     <tr>
+                         <th style="width: 5%;">S.No</th>
+                         <th style="width: 10%;">Course</th>
+                         <th style="width: 18%;">Hall Ticket No</th>
+                         <th style="width: 25%;">Board / University</th>
+                         <th style="width: 25%;">Name of the Institution</th>
+                         <th style="width: 8%;">CGPA</th>
+                         <th style="width: 9%;">Year of Passing</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr><td>1</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>2</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>3</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>4</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>5</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                 </tbody>
+             </table>
+             <div class="field-row" style="margin-top: 10px;">
+                 <label>Qualifying Hall Ticket No:</label>
+                 <input type="text" class="input-line fill">
+                 <label>Rank:</label>
+                 <input type="text" class="input-line fill">
+             </div>
+         </div>
+
+         <div class="section-title vertical-label"><span>FEE PARTICULARS / OFFICE USE ONLY</span></div>
+         <div class="section-content">
+             <div class="field-row" style="margin-bottom: 10px;">
+                 <label>Year of Admission:</label>
+                 <input type="text" class="input-line">
+                 <label style="margin-left:auto;">Date of Admission:</label>
+                 <input type="date" class="input-line">
+             </div>
+             <table class="form-table">
+                 <thead>
+                     <tr>
+                         <th>S.No</th>
+                         <th>YEAR</th>
+                         <th>TUITION FEE</th>
+                         <th>Spl. & Adm. Fee</th>
+                         <th>Total</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr><td>1</td><td>I</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>2</td><td>II</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>3</td><td>III</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>4</td><td>IV</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                     <tr><td>5</td><td>V</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                 </tbody>
+             </table>
+              <div class="field-row" style="margin-top: 10px;">
+                 <label>Payment ID:</label>
+                 <input type="text" class="input-line fill">
+                 <label>Tuition Fee:</label>
+                 <input type="text" class="input-line fill">
+                  <label>Fee paid:</label>
+                 <input type="text" class="input-line fill">
+             </div>
+         </div>
+
+         <div class="section-title vertical-label"><span>SOURCE OF INFORMATION</span></div>
+         <div class="section-content">
+             <p style="margin-bottom: 10px;">How did you hear about RVS University?</p>
+             <div class="checkbox-grid">
+                 <label><input type="checkbox"> Advertisement</label>
+                 <label><input type="checkbox"> Friends / Relatives</label>
+                 <label><input type="checkbox"> Representative</label>
+                 <label><input type="checkbox"> School Management</label>
+                 <label><input type="checkbox"> SMS / WhatsApp</label>
+                 <label><input type="checkbox"> SVCET Website</label>
+                 <label><input type="checkbox"> Trade Fair / Exhibition</label>
+                 <label><input type="checkbox"> Direct Mailer</label>
+                 <label><input type="checkbox"> Social Media</label>
+                 <label><input type="checkbox"> Educational Consultant / Agent</label>
+                 <label><input type="checkbox"> Banner / Hoardings</label>
+                 <label><input type="checkbox"> Search Engine</label>
+             </div>
+             <div class="field-row" style="margin-top: 10px;">
+                 <label>Please specify the name:</label>
+                 <input type="text" class="input-line fill">
+             </div>
+         </div>
+
+         <div class="section-title vertical-label"><span>ENCLOSED COPIES / CHECKLIST</span></div>
+         <div class="section-content">
+             <div class="checkbox-grid double">
+                 <label><input type="checkbox"> 10th Std / SLC / O' Level Certificate</label>
+                 <label><input type="checkbox"> Transfer / Migration / Leaving Certificate</label>
+                 <label><input type="checkbox"> 12th Std / HSC / +2 / A' Level Certificate</label>
+                 <label><input type="checkbox"> Passport Copy & Citizenship Card Copy</label>
+                 <label><input type="checkbox"> Diploma Certificate</label>
+                 <label><input type="checkbox"> Study cum Conduct Certificate</label>
+                 <label><input type="checkbox"> Passport Size Photographs</label>
+                 <label><input type="checkbox"> Caste Certificate</label>
+                 <label><input type="checkbox"> Proof of NRI / Foreign National / PIO status</label>
+                 <label><input type="checkbox"> Income Certificate</label>
+                 <label><input type="checkbox"> Blood Group Certificate</label>
+                 <label><input type="checkbox"> Student Aadhar</label>
+                 <label><input type="checkbox"> Father Aadhar</label>
+                 <label><input type="checkbox"> Mother Aadhar</label>
+                 <label><input type="checkbox"> NCC / NSS / Sports Certificate</label>
+             </div>
+             <p style="color: #666; font-size: 11px; font-style: italic; margin-top: 8px;">Note: Original Certificates should be submitted at the time of admission.</p>
+         </div>
+    </div>
+    
+    <div class="page" id="page3" style="page-break-before: always;">
+        <h3 class="text-center" style="margin-top: 20px;">DECLARATION</h3>
+        <p class="text-block">
+            I hereby declare that all particulars stated in this application form are true to the best of my knowledge and belief. I have read and understood all provisions of admission and agree to abide by them. In the event of submission of fraudulent, incorrect or untrue information or suppression or distortion of any fact like educational qualification, marks, nationality etc., I understand that my admission/degree is liable for cancellation. I further understand that my admission is purely provisional subject to the verification of the eligibility conditions. I am also aware of the financial obligation of applying to and studying at this University and I undertake to pay the tuition and other fees payable to this University and abide by all rules and regulations of the University that are in force from time to time.
+        </p>
+        <div class="signature-row" style="justify-content: flex-end; margin-top: 40px;">
+            <span>Signature of the Applicant</span>
+        </div>
+
+        <h3 class="text-center" style="margin-top: 40px;">UNDERTAKING</h3>
+        <p class="text-block" style="line-height: 2;">
+            I, studying <input type="text" class="input-line" style="width: 150px;"> year / B.Tech / M.Tech /MBA / MCA/ BBA / BCA at RVS University, Chittoor, Son/Daughter of <input type="text" class="input-line" style="width: 300px;"> Residing at <input type="text" class="input-line" style="width: 300px;"> undertake that I am aware of the system of punishment in case of ragging with other student and that in case I become involved in any manner in any ragging case, I am liable for any punishment including:
+        </p>
+        <ol class="text-list">
+            <li>Cancellation of admission.</li>
+            <li>Suspension from attending classes.</li>
+            <li>With holding / withdrawing scholarship / fellowship and other benefits.</li>
+            <li>Debarring from appearing for any test / examination or other evaluation process.</li>
+            <li>Debarring from representing the institution in any national or international meet, tournament, youth festival, etc.</li>
+            <li>Suspension, expulsion from the hostel.</li>
+            <li>Rustication from the University for a period varying from 1 to 2 academic years.</li>
+            <li>Expulsion from the University and consequent debarring from admission to any other University / Institution.</li>
+            <li>Fine up to Rs. 50,000 /-</li>
+            <li>Rigorous imprisonment up to three years (by Court of Law) etc.</li>
+        </ol>
+
+        <div class="field-row" style="margin-top: 40px; width: 300px;">
+            <label>Place:</label>
+            <input type="text" class="input-line fill">
+        </div>
+        <div class="field-row" style="width: 300px;">
+            <label>Date:</label>
+            <input type="text" class="input-line fill">
+        </div>
+
+        <div class="signature-row" style="justify-content: space-between; margin-top: 40px;">
+            <span>Signature of the Parent / Guardian</span>
+            <span>Signature of the Student</span>
+        </div>
+    </div>
+    
+     <div class="page" id="page4" style="page-break-before: always;">
+        <h4 class="text-center" style="margin-top: 15px;">OBSERVANCE OF GENERAL DISCIPLINE AMONG THE STUDENTS IN THE UNIVERSITY</h4>
+        <p class="text-block" style="font-size: 0.9em; margin-bottom: 10px; margin-top: 10px;">In order to maintain serene, silent, clear and studious environment in the University campus and to inculcate discipline in the students, the following RULES and REGULATIONS are formulated.</p>
+        <ol class="text-list alpha" style="font-size: 0.9em; margin-bottom: 10px;">
+            <li>act is liable for suspension / dismissal.</li>
+            <li>Students should neither involve nor encourage any act of boycott / strike / quarrels, etc.</li>
+            <li>Students should follow dress code as prescribed by the University.</li>
+            <li>Students should maintain punctuality and attend all classes regularly and on time.</li>
+            <li>Students should not possess Mobile Phones in the premises of University Campus and Hostel. If found will be seized with penalty.</li>
+            <li>Students should carry Identity Cards as long as they are in the University Campus.</li>
+            <li>Students should wear uniform and be well groomed. Boys should tuck-in shirts without making noise.</li>
+            <li>During lunch time students should take their lunch only in the allotted place / waiting hall.</li>
+            <li>Students should cooperate to maintain cleanliness in the Campus. In this connection students are strongly advised to use dustbins.</li>
+            <li>Students should maintain decency and decorum in the classroom.</li>
+            <li>Students should not link or mess up with others items / cash / books / calculators, etc., in the class room or in the campus premises.</li>
+        </ol>
+        
+        <p class="text-block" style="font-size: 0.9em; margin-top: 10px; margin-bottom: 10px;">
+            Students are strictly instructed to follow the above RULES and REGULATIONS. Any violation of the General Discipline is liable for punishment (such as Suspension from attending college / Rustication, penalty, etc.) as decided by the Disciplinary committee. It is the responsibility of the students to safeguard the image and reputation of the University in their own interest.
+        </p>
+        <p class="text-block" style="font-size: 0.9em; margin-top: 10px; margin-bottom: 10px;">
+            Further, I hereby agree and abide by the above Rules and Regulations of RVS University, RVS Nagar, Chittoor.
+        </p>
+        
+        <div class="signature-row" style="justify-content: space-between; margin-top: 25px;">
+            <span>Signature of the Parent / Guardian</span>
+            <span>Signature of the Applicant</span>
+        </div>
+        
+        <h3 class="text-center" style="margin-top: 20px;">Letter of Undertaking - RVS University</h3>
+        
+        <p class="text-block" style="line-height: 1.8; font-size: 0.9em; margin-bottom: 10px; margin-top: 10px;">
+            I, Mr./Miss. <input type="text" class="input-line" style="width: 250px;"> admitted into <input type="text" class="input-line" style="width: 100px;"> Year, <input type="text" class="input-line" style="width: 100px;"> Branch, <input type="text" class="input-line" style="width: 200px;"> Course, during the academic year <input type="text" class="input-line" style="width: 150px;"> at RVS University, Chittoor, hereby undertake to abide by all the rules and regulations of the University. I have read and understood the academic regulations, course structure and syllabus applicable to my programme.
+        </p>
+        <p class="text-block" style="line-height: 1.8; font-size: 0.9em; margin-bottom: 10px;">
+            I understand that RVS University follows its prescribed academic regulations, curriculum and system of evaluation. I agree to abide by all academic requirements and regulations of the University and understand that the University will issue the applicable academic records and certificates upon successful completion of the programme.
+        </p>
+        
+         <div class="signature-row" style="justify-content: flex-end; margin-top: 25px;">
+            <span>Signature of the Applicant</span>
+        </div>
+        
+        <div class="office-use-box" style="margin-top: 10px; padding: 10px 15px;">
+            <h4 style="margin-bottom: 10px;">RVS UNIVERSITY - OFFICE USE</h4>
+            <div class="field-row" style="margin-top: 15px;">
+                <label>Application No:</label>
+                <input type="text" class="input-line" style="width: 150px;">
+                <label style="margin-left: 20px;">Verified By:</label>
+                <input type="text" class="input-line fill">
+                <label style="margin-left: 20px;">Date:</label>
+                <input type="date" class="input-line">
+            </div>
+            <div class="field-row" style="margin-top: 15px;">
+                <label>APPLICATION VERIFIED:</label>
+                <label><input type="checkbox"> YES</label>
+                <label><input type="checkbox"> NO</label>
+            </div>
+            
+            <div class="field-row" style="margin-top: 25px; justify-content: space-between; align-items: flex-end;">
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <label><input type="checkbox"> ADMITTED / NOT ADMITTED</label>
+                    <label><input type="checkbox"> ADMITTED</label>
+                    <label><input type="checkbox"> NOT ADMITTED</label>
+                </div>
+                <div class="signature-row" style="gap: 40px; font-size: 0.9em; margin: 0; padding-right: 20px;">
+                    <span>Administrative Officer</span>
+                    <span>Principal</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls no-print" style="margin-top: 30px; margin-bottom: 50px;">
+        <button onclick="window.print()" style="padding: 12px 30px; font-size: 18px; font-weight: bold; background-color: #d81b60;">Print Form</button>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            if (!event.target.files[0]) return;
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('photo-preview');
+                output.src = reader.result;
+                output.style.display = 'block';
+                document.getElementById('photo-text').style.display = 'none';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function previewLogo(event) {
+            if (!event.target.files[0]) return;
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('logo-img');
+                output.src = reader.result;
+                output.style.display = 'block';
+                document.getElementById('logo-text').style.display = 'none';
+                document.querySelector('.logo-placeholder').style.border = 'none';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

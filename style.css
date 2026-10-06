@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+.page {
+    background-color: #f8eecd; /* Custom cream/gold color based on provided image */
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 26px;
+    background-color: #fff;
+}
+
+.logo-placeholder:hover {
+    background-color: #f0f0f0;
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+    padding: 0 20px;
+}
+
+.header-text h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.sub-tagline {
+    font-size: 11px;
+    color: #777;
+}
+
+.naac-grade {
+    border: 2px solid #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.naac-grade h2 {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.top-fields {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.fields-left {
+    flex: 1;
+    margin-right: 140px; /* Prevent overlap with photo-box */
+}
+
+.photo-box {
+    width: 120px;
+    height: 150px;
+    border: 1px solid #999;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.photo-box:hover {
+    background-color: #f9f9f9;
+}
+
+.field-group, .field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #000;
+}
+
+.input-line {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    outline: none;
+    padding: 2px 5px;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.input-line.fill {
+    flex: 1;
+}
+
+/* Sections */
+.section-title {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    font-size: 12px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    text-align: center;
+    padding: 10px 5px;
+    position: absolute;
+    left: 10mm;
+    border: 1px solid #aaa;
+}
+
+.section-content {
+    margin-left: 30px;
+    border-left: 2px solid #ccc;
+    padding-left: 15px;
+    margin-bottom: 10px; /* Reduced to fit A4 */
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.checkbox-group.inline {
+    margin-bottom: 0;
+}
+
+.checkbox-group label, .checkbox-grid label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    color: #222;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.checkbox-grid.double {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.form-table th, .form-table td {
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+}
+
+.form-table th {
+    background-color: #f9f9f9;
+}
+
+.form-table input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-block {
+    font-size: 13px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.text-list {
+    font-size: 13px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.text-list li {
+    margin-bottom: 5px;
+}
+
+.text-list.alpha {
+    list-style-type: lower-alpha;
+}
+
+.signature-row {
+    display: flex;
+    align-items: center;
+}
+
+.signature-row span {
+    border-top: 1px dotted #000;
+    padding-top: 5px;
+    font-size: 13px;
+}
+
+.office-use-box {
+    border: 2px solid #333;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.office-use-box h4 {
+    margin-bottom: 15px;
+}
+
+/* Print specific styles */
+@media print {
+    @page {
+        size: A4;
+        margin: 0; /* Removes default browser headers and footers */
+    }
+    
+    body {
+        background-color: white;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .no-print {
+        display: none;
+    }
+    
+    .page {
+        background-color: #f8eecd; /* Keep custom background in print */
+        margin: 0;
+        padding: 10mm 15mm; /* Reduced padding to fit more content */
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm; /* Force exact height to avoid spilling into white pages */
+        overflow: hidden;
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+    
+    .section-content, .office-use-box, .text-block, .signature-row {
+        page-break-inside: avoid;
+    }
+    
+    /* Ensure colors are printed */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .section-title {
+        left: 0;
+    }
+}
