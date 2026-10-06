@@ -430,8 +430,14 @@
         </p>
         
         <div class="signature-row" style="justify-content: space-between; margin-top: 25px;">
-            <span>Signature of the Parent / Guardian</span>
-            <span>Signature of the Applicant</span>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="signature-box" onclick="openSignatureModal(this)">Click to Sign</div>
+                <span>Signature of the Parent / Guardian</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="signature-box" onclick="openSignatureModal(this)">Click to Sign</div>
+                <span>Signature of the Applicant</span>
+            </div>
         </div>
         
         <h3 class="text-center" style="margin-top: 20px;">Letter of Undertaking - RVS University</h3>
@@ -444,34 +450,54 @@
         </p>
         
          <div class="signature-row" style="justify-content: flex-end; margin-top: 25px;">
-            <span>Signature of the Applicant</span>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="signature-box" onclick="openSignatureModal(this)">Click to Sign</div>
+                <span>Signature of the Applicant</span>
+            </div>
         </div>
         
-        <div class="office-use-box" style="margin-top: 10px; padding: 10px 15px;">
-            <h4 style="margin-bottom: 10px;">RVS UNIVERSITY - OFFICE USE</h4>
-            <div class="field-row" style="margin-top: 15px;">
-                <label>Application No:</label>
-                <input type="text" class="input-line" style="width: 150px;">
-                <label style="margin-left: 20px;">Verified By:</label>
-                <input type="text" class="input-line fill">
-                <label style="margin-left: 20px;">Date:</label>
-                <input type="date" class="input-line">
-            </div>
-            <div class="field-row" style="margin-top: 15px;">
-                <label>APPLICATION VERIFIED:</label>
-                <label><input type="checkbox"> YES</label>
-                <label><input type="checkbox"> NO</label>
+        <div class="office-use-box" style="margin-top: 15px; padding: 15px; border: 1px solid #333;">
+            <h4 style="margin-bottom: 15px; font-size: 1.1em; color: #444;">RVS UNIVERSITY - OFFICE USE</h4>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <label style="font-weight: bold; color: #555; white-space: nowrap;">Application No:</label>
+                    <input type="text" style="width: 180px; height: 26px; border: 1px solid #999; background: transparent; outline: none; padding: 2px;">
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <label style="font-weight: bold; color: #555; white-space: nowrap;">Verified By:</label>
+                    <input type="text" style="width: 180px; height: 26px; border: 1px solid #999; background: transparent; outline: none; padding: 2px;">
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <label style="font-weight: bold; color: #555; white-space: nowrap;">Date:</label>
+                    <input type="text" style="width: 100px; height: 26px; border: 1px solid #999; background: transparent; outline: none; padding: 2px;">
+                </div>
             </div>
             
-            <div class="field-row" style="margin-top: 25px; justify-content: space-between; align-items: flex-end;">
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <label><input type="checkbox"> ADMITTED / NOT ADMITTED</label>
-                    <label><input type="checkbox"> ADMITTED</label>
-                    <label><input type="checkbox"> NOT ADMITTED</label>
+            <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 25px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <label style="font-weight: bold; color: #555;">APPLICATION VERIFIED:</label>
+                        <label style="color: #444;"><input type="checkbox" style="width: 14px; height: 14px; border: 1px solid #999;"> YES</label>
+                        <label style="color: #444;"><input type="checkbox" style="width: 14px; height: 14px; border: 1px solid #999;"> NO</label>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <label style="font-weight: bold; color: #555;">ADMITTED / NOT ADMITTED</label>
+                        <label style="color: #444;"><input type="checkbox" style="width: 14px; height: 14px; border: 1px solid #999;"> ADMITTED</label>
+                        <label style="color: #444;"><input type="checkbox" style="width: 14px; height: 14px; border: 1px solid #999;"> NOT ADMITTED</label>
+                    </div>
                 </div>
-                <div class="signature-row" style="gap: 40px; font-size: 0.9em; margin: 0; padding-right: 20px;">
-                    <span>Administrative Officer</span>
-                    <span>Principal</span>
+                
+                <div style="display: flex; gap: 40px; align-items: flex-end; padding-right: 15px;">
+                    <div style="text-align: center; font-size: 0.9em; color: #555;">
+                        <div style="border-bottom: 1px solid #555; width: 170px; margin-bottom: 5px;"></div>
+                        Administrative Officer
+                    </div>
+                    <div style="text-align: center; font-size: 0.9em; color: #555;">
+                        <div style="border-bottom: 1px solid #555; width: 120px; margin-bottom: 5px;"></div>
+                        Principal
+                    </div>
                 </div>
             </div>
         </div>
@@ -506,6 +532,108 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
+    </script>
+
+    <!-- Signature Modal -->
+    <div id="signatureModal" class="modal no-print" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+        <div class="modal-content" style="background-color:white; padding:20px; border-radius:8px; text-align:center; width:90%; max-width:500px;">
+            <h3 style="margin-bottom: 10px;">Draw Your Signature</h3>
+            <canvas id="sigCanvas" width="400" height="200" style="max-width: 100%; border: 1px solid #ccc; background-color: #f9f9f9; cursor: crosshair; touch-action: none;"></canvas>
+            <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
+                <button type="button" style="background-color: #dc3545;" onclick="clearSignature()">Clear</button>
+                <button type="button" style="background-color: #6c757d;" onclick="closeSignatureModal()">Cancel</button>
+                <button type="button" style="background-color: #28a745;" onclick="saveSignature()">Save</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // --- Signature Pad Logic ---
+        let canvas = document.getElementById('sigCanvas');
+        let ctx = canvas.getContext('2d');
+        let drawing = false;
+        let currentTargetBox = null;
+
+        function resizeCanvas() {
+            if (window.innerWidth < 450) {
+                canvas.width = window.innerWidth - 80;
+            } else {
+                canvas.width = 400;
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function openSignatureModal(element) {
+            currentTargetBox = element;
+            document.getElementById('signatureModal').style.display = 'flex';
+            clearSignature();
+        }
+
+        function closeSignatureModal() {
+            document.getElementById('signatureModal').style.display = 'none';
+        }
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function saveSignature() {
+            if (currentTargetBox) {
+                const dataURL = canvas.toDataURL("image/png");
+                currentTargetBox.style.backgroundImage = `url('${dataURL}')`;
+                currentTargetBox.classList.add('signed');
+                currentTargetBox.innerHTML = ''; // hide text
+                currentTargetBox.style.border = 'none';
+            }
+            closeSignatureModal();
+        }
+
+        function getMousePos(e) {
+            let rect = canvas.getBoundingClientRect();
+            let clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            let clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            return {
+                x: clientX - rect.left,
+                y: clientY - rect.top
+            };
+        }
+
+        function startDrawing(e) {
+            e.preventDefault();
+            drawing = true;
+            let pos = getMousePos(e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            e.preventDefault();
+            let pos = getMousePos(e);
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#000';
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+        }
+
+        function stopDrawing(e) {
+            if (!drawing) return;
+            e.preventDefault();
+            drawing = false;
+            ctx.closePath();
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        canvas.addEventListener('touchstart', startDrawing, {passive: false});
+        canvas.addEventListener('touchmove', draw, {passive: false});
+        canvas.addEventListener('touchend', stopDrawing, {passive: false});
+        canvas.addEventListener('touchcancel', stopDrawing, {passive: false});
     </script>
 </body>
 </html>
